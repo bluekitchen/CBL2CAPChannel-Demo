@@ -13,6 +13,7 @@
 		9C060B31200CE6D60067AD3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C060B30200CE6D60067AD3B /* Assets.xcassets */; };
 		9C060B34200CE6D60067AD3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C060B32200CE6D60067AD3B /* LaunchScreen.storyboard */; };
 		9C060B37200CE6D60067AD3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C060B36200CE6D60067AD3B /* main.m */; };
+		9C060B3E200CE7E10067AD3B /* BKL2CAPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C060B3D200CE7E10067AD3B /* BKL2CAPClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		9C060B33200CE6D60067AD3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C060B35200CE6D60067AD3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C060B36200CE6D60067AD3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C060B3D200CE7E10067AD3B /* BKL2CAPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKL2CAPClient.m; sourceTree = "<group>"; };
+		9C060B3F200CE7FA0067AD3B /* BKL2CAPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKL2CAPClient.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				9C060B32200CE6D60067AD3B /* LaunchScreen.storyboard */,
 				9C060B35200CE6D60067AD3B /* Info.plist */,
 				9C060B36200CE6D60067AD3B /* main.m */,
+				9C060B3D200CE7E10067AD3B /* BKL2CAPClient.m */,
+				9C060B3F200CE7FA0067AD3B /* BKL2CAPClient.h */,
 			);
 			path = "CBL2CAPChannel-Demo";
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C060B3E200CE7E10067AD3B /* BKL2CAPClient.m in Sources */,
 				9C060B2C200CE6D60067AD3B /* ViewController.m in Sources */,
 				9C060B37200CE6D60067AD3B /* main.m in Sources */,
 				9C060B29200CE6D60067AD3B /* AppDelegate.m in Sources */,
@@ -281,6 +287,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6M5NY9B48L;
 				INFOPLIST_FILE = "CBL2CAPChannel-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bluekitchen.CBL2CAPChannel-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,6 +302,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6M5NY9B48L;
 				INFOPLIST_FILE = "CBL2CAPChannel-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bluekitchen.CBL2CAPChannel-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";

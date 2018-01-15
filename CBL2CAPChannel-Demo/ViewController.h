@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BKL2CAPClient.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<BKL2CAPClientDelegate, NSStreamDelegate>{
+    NSOutputStream* outputStream;
+    NSInputStream* inputStream;
+}
 
+@property (strong, nonatomic)BKL2CAPClient * l2capClient;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @end
 
