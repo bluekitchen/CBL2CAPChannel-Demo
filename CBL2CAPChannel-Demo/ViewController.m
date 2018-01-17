@@ -44,6 +44,7 @@
 
 - (void)disconnected {
     self.statusLabel.text = @"Scanning for device";
+    self.throughputLabel.text = @"";
 }
 
 -(void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode
@@ -141,12 +142,13 @@ static NSDate * track_interval_start;
     
     NSData* data = [NSData dataWithBytes:test_data length:TEST_PACKET_SIZE];
     NSInteger res = [self->outputStream write:[data bytes] maxLength:[data length]];
-    if (res != TEST_PACKET_SIZE){
-        NSLog(@"Write %u bytes, res %d", TEST_PACKET_SIZE, (int) res);
+    if (res == TEST_PACKET_SIZE){
+        // track
+        [self trackData:(int)[data length]];
+    } else {
+        NSLog(@"Error: Write %u bytes, res %d", TEST_PACKET_SIZE, (int) res);
+        self.throughputLabel.text = [NSString stringWithFormat:@"Write %u bytes, res %d", TEST_PACKET_SIZE, (int) res];
     }
-    
-    // track
-    [self trackData:(int)[data length]];
 }
 
 - (void)didReceiveMemoryWarning {
