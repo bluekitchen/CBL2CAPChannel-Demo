@@ -100,7 +100,7 @@
     self.discoveredPeripheral = nil;
     
     // let's start scanning again
-    // [self scan];
+    [self scan];
 }
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral

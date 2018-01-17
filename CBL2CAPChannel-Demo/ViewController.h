@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic)BKL2CAPClient * l2capClient;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *throughputLabel;
 
 @end
 

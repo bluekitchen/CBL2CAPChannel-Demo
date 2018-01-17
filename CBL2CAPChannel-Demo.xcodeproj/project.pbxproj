@@ -29,6 +29,7 @@
 		9C060B36200CE6D60067AD3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C060B3D200CE7E10067AD3B /* BKL2CAPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKL2CAPClient.m; sourceTree = "<group>"; };
 		9C060B3F200CE7FA0067AD3B /* BKL2CAPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKL2CAPClient.h; sourceTree = "<group>"; };
+		9C90D699200D5B57005479F6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +73,7 @@
 				9C060B36200CE6D60067AD3B /* main.m */,
 				9C060B3D200CE7E10067AD3B /* BKL2CAPClient.m */,
 				9C060B3F200CE7FA0067AD3B /* BKL2CAPClient.h */,
+				9C90D699200D5B57005479F6 /* README.md */,
 			);
 			path = "CBL2CAPChannel-Demo";
 			sourceTree = "<group>";

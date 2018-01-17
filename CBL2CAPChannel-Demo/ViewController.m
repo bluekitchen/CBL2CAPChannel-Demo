@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 #define TEST_PACKET_SIZE 1000
+#define REPORT_INTERVAL_MS 3000
 
 @interface ViewController ()
 
@@ -81,17 +82,47 @@
     }
 }
 
-static uint32_t total_bytes = 0;
+
+
+/* ... Do whatever you need to do ... */
+
+static uint32_t track_total_bytes = 0;
+
+static uint32_t track_interval_bytes;
+static NSDate * track_interval_start;
 
 -(void)trackReset{
-    total_bytes = 0;
+    track_total_bytes = 0;
+    track_interval_start = nil;
+    self.throughputLabel.text = @"";
 }
 
 -(void)trackData:(int)numBytes{
-    // track bytes and update status label periodically
-    total_bytes += numBytes;
-    NSLog(@"Sent %u", total_bytes);
-    self.statusLabel.text = [NSString stringWithFormat:@"Sent: %u bytes", total_bytes];
+
+    // track bytes
+    track_total_bytes += numBytes;
+    track_interval_bytes += numBytes;
+    
+    self.statusLabel.text = [NSString stringWithFormat:@"Sent: %u bytes", track_total_bytes];
+
+    // wait until 20 kB are sent - seems to be buffered locally on iOS
+    if (track_total_bytes < 20000) return;
+
+    NSDate * now = [NSDate date];
+    if (track_interval_start == nil){
+        track_interval_start = now;
+        track_interval_bytes = 0;
+    }
+    
+    NSTimeInterval time_passed = [now timeIntervalSinceDate:track_interval_start];
+    if (time_passed < (REPORT_INTERVAL_MS / 1000)) return;
+    float kb_per_second = track_interval_bytes / time_passed / 1000.0;
+    NSLog(@"Sent %u - Throughput: %.3f", track_total_bytes, kb_per_second);
+    self.throughputLabel.text = [NSString stringWithFormat:@"Throughput: %.1f kB/s", kb_per_second];
+
+    // next round
+    track_interval_bytes = 0;
+    track_interval_start = now;
 }
 
 -(void)sendStreamData
